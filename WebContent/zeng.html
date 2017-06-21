@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#fb").click(function(){
+					var title = $("[name='title']").val();
+					var content = $("#content").val();
+					//alert(content);
+					$.ajax({
+						type:"post",
+						url:"zeng",
+						data:{
+							title:title,
+							content:content
+						},
+						success:function(data,status){
+							alert(data);
+						}
+					})
+				})
+			})
+		</script>
+		
+	</head>
+	<body >
+		<div style="margin: 120px 200px;">
+			<form >
+				<table>
+					<tr>
+						<td>标题：</td>
+						<td><input type="text" name="title"/></td>
+					</tr>
+					<tr>
+						<td>内容:</td>
+						<td><textarea  id="content" style="height: 100px;"></textarea></td>
+					</tr>
+					<tr>
+						<td><input type="button" value="发布帖子" id = "fb"/></td>
+					</tr> 
+				</table>
+			</form>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#st").click(function(){
+					var title = $("[name='title']").val();
+					$.ajax({
+						type:"post",
+						url:"shan",
+						data:{
+							title:title
+						},
+						success:function(data,status){
+							alert(data);
+						}
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div style="margin: 120px 200px;">
+			<form >
+				<table>
+					<tr>
+						<td>标题：</td>
+						<td><input type="text" name="title"/></td>
+					</tr>
+					<tr>
+						<td><input type="button" value="删除帖子" id="st"/></td>
+					</tr> 
+				</table>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登陆</title>
+<script src="text/javascript" href="js/jquery3.min.js" type="javascript"></script>
+<script type="text/javascript">
+	function zhuce(){
+		window.location.href="register.html";
+	}
+	
+</script>
+</head>
+<body style="text-align:center;background: grey;"  >
+	<form style=" height: 500px; padding-top: 100px;" action="log" method="post">
+				<table align="center">
+					<tr>
+						<td>用户名:</td>
+						<td><input type="text" name="name"/></td>
+					</tr>
+					<tr>
+						<td>密码：</td>
+						<td><input type="text" name="password"/></td>
+					</tr>
+					<tr>
+						<td align="right"></td>
+						<td><input type="submit" value="登录"/><input type="button" onclick="zhuce()" value="注册" /></td>
+					</tr>
+				
+				</table>
+			</form>
+</body>
+</html>

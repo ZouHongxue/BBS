@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#xt").click(function(){
+					var otitle = $("[name='otitle']").val();
+					var ntitle = $("[name='ntitle']").val();
+					var content = $("#content").val();
+					$.ajax({
+						type:"post",
+						url:"gai",
+						data:{
+							otitle:otitle,
+							ntitle:ntitle,
+							content:content
+						},
+						success:function(data,status){
+							alert(data);
+						}
+					})
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div style="margin: 120px 200px;">
+			<form >
+				<table>
+					<tr>
+						<td>原标题：</td>
+						<td><input type="text" name="otitle"/></td>
+					</tr>
+					<tr>
+						<td>新标题：</td>
+						<td><input type="text" name="ntitle"/></td>
+					</tr>
+					<tr>
+						<td>新内容:</td>
+						<td><textarea  id="content" style="height: 100px;"></textarea></td>
+					</tr>
+					<tr>
+						<td><input type="button" value="修改帖子" id="xt"/></td>
+					</tr> 
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
